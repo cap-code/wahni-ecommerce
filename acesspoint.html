@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include "templates/includes/header.html" %}
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
+	  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
+     <style>
+       #mapid {
+         width:100%;
+         height:100%
+       }
+     </style>
+  </head>
+<body>
+  {% include "templates/includes/navbar.html" %}
+  <div class="acesspoints container mt-5 pt-5 mb-5 pb-4">
+    <div class="acesspointsflex mt-5">
+        <div id="mapid">
+         </div>
+        <div class="acessdetails-container">
+            <div class="acess-points-contents">
+                <div class="single">
+                    <h5>Kinanoor</h5>
+                    <p>Rating</p>
+                    <p>phone number</p>
+                    <p>Malom - Eleritattu - Nileshwar Rd, Kerala 671314</p>
+                    <button class="shopNow-btn">Know more</button>
+                </div>
+                <div class="single">
+                    <h5>Payyanur</h5>
+                    <p>Rating</p>
+                    <p>phone number</p>
+                    <p>bus stand, New, Payyanur, Kerala 670307                    </p>
+                    <button class="shopNow-btn">Know more</button>
+                </div>
+                <div class="single">
+                    <h5>Pappinippara</h5>
+                    <p>Rating</p>
+                    <p>phone number</p>
+                    <p>Pappinippara, Kerala 676517                    </p>
+                    <button class="shopNow-btn">Know more</button>
+                </div>
+                <div class="single">
+                    <h5>Chiranellur</h5>
+                    <p>Rating</p>
+                    <p>phone number</p>
+                    <p>Thalakottukara, Kerala 680501                    </p>
+                    <button class="shopNow-btn">know more</button>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  {% include "templates/includes/footer.html" %}
+  <div class="fixedbuttons">
+    <div class="support-img-con">
+      <a href="./acesspoint.html">
+        <img src="./assets/bldc/image/locator.png" alt="button for acess points" />
+      </a>
+    </div>
+    <div class="support-img-con">
+      <a href="#">
+        <img src="./assets/bldc/image/headphones.png" alt="button for customer support"/>
+      </a>
+    </div>
+  </div>
+  <script src="./assets/bldc/js/acess.js"></script>
+  <script src="./assets/bldc/js/floating.js"></script>
+  <script>
+    		const mymap = L.map('mapid').setView([10.8505, 76.2711], 7);
+        const tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+			attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+		});
+    tiles.addTo(mymap);
+    // const marker=L.marker([0,0]).addTo(mymap);
+    L.marker([10.43801, 76.07685]).addTo(mymap);
+    L.marker([12.28792, 75.22268]).addTo(mymap);
+    L.marker([11.09196, 76.09556]).addTo(mymap);
+    L.marker([10.63386, 76.13919]).addTo(mymap);
+    L.marker([12.10611, 75.21411]).addTo(mymap);
+
+
+  </script>
+</body>
+</html>

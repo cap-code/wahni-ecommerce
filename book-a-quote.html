@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "templates/includes/header.html" %}
+    <link href="/assets/bldc/css/quote.css" rel="stylesheet" />
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script>
+        function verify(token){
+            console.log(token);
+            //call url  in server side https://www.google.com/recaptcha/api/siteverify?secret=secretkey&response=token
+            //check for response success:true
+            //then recaptcha is valid othervise invalid
+        }
+    </script>
+</head>
+<body>
+    {% include "templates/includes/navbar.html" %}
+    <div class="container mt-5 pt-5 pb-5 mb-5">
+        <div class="pb-3 mt-5">
+            <h1>Book a Quote</h1>
+        </div>
+        <div class="quote-con">
+            <div class="form-quote">
+                <form class="quoteForm">
+                    <input type="text" placeholder="name"/>
+                    <input type="email" placeholder="Email"/>
+                    <input type="tel" placeholder="Phone Number" />
+                    <textarea placeholder="Message"></textarea>
+                    <div class="g-recaptcha" data-sitekey="6Lc9ylQdAAAAAGbvmzXT3L1QVeFXBQ-bsxNVgJGF" data-callback="verify"></div>
+                    <br/>
+                    <button>Send Message</button>
+                </form>
+            </div>
+            <div class="quoteimage-con">
+                <img src="./assets/bldc/image/quote.png" alt="https://storyset.com/people"/>
+                <div class="finalCon">
+                    <p>GET IN TOUCH</p>
+                    <h4>info@wahni.com</h4>
+                    <h4>+91 8047111555</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include "templates/includes/footer.html" %}
+</body>
+</html>

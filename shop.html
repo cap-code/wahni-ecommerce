@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+     {% include "templates/includes/header.html" %}
+  </head>
+<body>
+  {% include "templates/includes/navbar.html" %}  
+  <div class="hero-container container-fluid">
+    <div class="horizontal-slider-container">
+      <div class="slide">
+        <div class="slide-content">
+          <h3 class="display-6 weight700">
+            For Self-sustaining  independent-housing
+          </h3>
+          <p class="lead">building self-sufficient and energy-efficient society</p>
+          <div>
+            <a href="./services.html">
+              <button class="shopNow-btn">Shop now</button>
+            </a>
+          </div>
+        </div>
+        <div class="slide-img-con-hero">
+          <img src="./assets/bldc/image/hero.png" alt="hero image" />
+        </div>
+      </div>
+      <div class="slide">
+        <div class="slide-content">
+          <h3 class="display-6 weight700">
+            For Self-sustaining  independent-housing
+          </h3>
+          <p class="lead">building self-sufficient and energy-efficient society</p>
+          <div>
+            <button class="shopNow-btn">Shop now</button>
+          </div>
+        </div>
+        <div class="slide-img-con-hero">
+          <img src="./assets/bldc/image/hero.png" alt="hero image" />
+        </div>
+      </div>
+      <div class="slide">
+        <div class="slide-content">
+          <h3 class="display-6 weight700">
+            For Self-sustaining  independent-housing
+          </h3>
+          <p class="lead">building self-sufficient and energy-efficient society</p>
+          <div>
+            <a href="./services.html">
+              <button class="shopNow-btn">Shop now</button>
+            </a>
+          </div>
+        </div>
+        <div class="slide-img-con-hero">
+          <img src="./assets/bldc/image/hero.png" alt="hero image" />
+        </div>
+      </div>
+      <div class="slide">
+        <div class="slide-content">
+          <h3 class="display-6 weight700">
+            For Self-sustaining  independent-housing
+          </h3>
+          <p class="lead">building self-sufficient and energy-efficient society</p>
+          <div>
+            <button class="shopNow-btn">Shop now</button>
+          </div>
+        </div>
+        <div class="slide-img-con-hero">
+          <img src="./assets/bldc/image/hero.png" alt="hero image" />
+        </div>
+      </div>
+      <div class="prev"><i class="bi bi-chevron-left" onclick="moveright(1)"></i></div>
+      <div class="next"><i class="bi bi-chevron-right" onclick="moveleft(-1)"></i></div>
+    </div>
+  </div>
+  <div class="vertical-slider-heading-container container">
+    <div>
+      <h3>Our Services</h3>
+    </div>
+  </div>
+  <div class="vertical-slider-container  mt-5">
+    <div class="solar-services">
+      <div class="service-card">
+        <div class="test-center ogi">
+          <img src="./assets/bldc/image/ongridnew.png" alt="https://storyset.com/outdoors"/>
+        </div>
+         <div class="service-card-content">
+           <h6 class="text-center">Solar on Grid</h6>          
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="text-center ogi">
+          <img class="ongrid-img" src="./assets/bldc/image/offgrid.png" alt="https://storyset.com/worker"/>
+        </div>
+         <div class="service-card-content">
+           <h6 class="text-center">Solar off Grid</h6>
+         </div>
+      </div>
+      <div class="service-card">
+        <div class="text-center ogi">
+          <img  src="./assets/bldc/image/bidir.png" alt="https://storyset.com/internet"/>
+        </div>
+         <div class="service-card-content">
+           <h6 class="text-center">Solar Bi-directional Hybrid</h6>
+         </div>
+      </div>
+    </div>
+  </div>
+    <div class="container mt-7 dealscolor pb-5">
+    <div class="daily-deals-heading">
+      <h3>Deals of the day</h3>
+    </div>
+    <div class="daily-deals-container">
+      {% for items in data %}
+      {%     if(items.new_deals) %}
+      <a href="http://103.86.176.198/{{items.route}}">
+      <div class="daily-deals-card">
+        <img src="{{items.image}}" alt="card"/>
+        <div class="daily-deals-content">
+          <div>
+            <h5>{{items.web_item_name}}</h5> 
+      {%       for p in price %}  
+      {%           if(items.item_code == p.item_code) %}      
+            <h3>{{p.price_list_rate}}</h3> 
+      {%           else  %}
+      {%           endif %}
+      {%       endfor %}       
+          </div>
+          <div>
+            <div class="addtocart-con">
+              <button class="addtocart" data-id="code1">
+                  <img class="addtocart-img" src="./assets/bldc/image/addtocart.png" alt="add to cart" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      </a>
+      {% else %}
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+  <div class="container mt-7 mb-5">
+    <div class="daily-deals-heading">
+      <h3>New Items</h3>
+    </div>
+    <div class="daily-deals-container">
+      {% for items in data %}
+      {%     if(items.new_items) %}
+      <a href="http://103.86.176.198/{{items.route}}">
+      <div class="daily-deals-card">
+        <img src="{{items.image}}" alt="card"/>
+        <div class="daily-deals-content">
+          <div>
+            <h5>{{items.web_item_name}}</h5> 
+      {%       for p in price %}  
+      {%           if(items.item_code == p.item_code) %}      
+            <h3>{{p.price_list_rate}}</h3> 
+      {%           else  %}
+      {%           endif %}
+      {%       endfor %}       
+          </div>
+          <div>
+            <div class="addtocart-con">
+              <button class="addtocart" data-id="code1">
+                  <img class="addtocart-img" src="./assets/bldc/image/addtocart.png" alt="add to cart" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      </a>
+      {% else %}
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+  <div class="fixedbuttons">
+    <div class="support-img-con">
+      <a href="./acesspoint.html">
+        <img src="./assets/bldc/image/locator.png" alt="button for acess points" />
+      </a>
+    </div>
+    <div class="support-img-con">
+      <a href="#">
+        <img src="./assets/bldc/image/headphones.png" alt="button for customer support"/>
+      </a>
+    </div>
+  </div>
+  {% include "templates/includes/footer.html" %}
+<!-- js should be loaded in body! -->
+  <script>
+    var items = {{data}}
+    var Price = {{price}}
+  </script>
+  <script src="./assets/bldc/js/search.js"></script>
+  <script src="./assets/bldc/js/home.js"></script>
+  <script src="./assets/bldc/js/floating.js"></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+  <!-- <script src="./assets/frappe/js/lib/socket.io.min.js"></script>
+  <script type="text/javascript" src="./assets/js/frappe-web.min.js"></script> -->
+  <script>
+
+  // frappe.ready(() => {
+		// $('.page_content').on('click', '.btn-add-to-cart', (e) => {
+		// 	const $btn = $(e.currentTarget);
+		// 	$btn.prop('disabled', true);
+		// 	const item_code = $btn.data('item-code');
+		// 	erpnext.shopping_cart.update_cart({
+		// 		item_code,
+		// 		qty: 1,
+		// 		callback(r) {
+		// 			$btn.prop('disabled', false);
+		// 			if (r.message) {
+		// 				$('.btn-add-to-cart, .btn-view-in-cart').toggleClass('hidden');
+		// 			}
+		// 		}
+		// 	});
+		// });
+  //   var addtocart = document.querySelector('.addtocart');
+  //   addtocart.forEach(btn => {
+  //     btn.addEventListener('click',(evt)=>{
+  //       console.log(btn.dataset.id);
+  //     })
+  //   });
+	// });
+  </script>
+  <!-- <script type="text/javascript" src="/assets/js/frappe-web.min.js?ver=1636018026.0"></script>
+  <script type="text/javascript" src="/assets/frappe/js/lib/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/assets/js/erpnext-web.min.js?ver=1636018026.0"></script> -->
+</body>
+</html>
