@@ -24,6 +24,9 @@
 .lotx{
    color: #888787; 
 }
+.solar-services{
+    width: -moz-fit-content;
+}
 @media screen and (min-width:768px){
     .header{
         display:flex;
@@ -49,6 +52,7 @@
         flex-direction: row;
         justify-content: flex-start;
         width: fit-content;
+        width:-moz-fit-content;
         margin: 0 auto;
         gap: 35px;
     }

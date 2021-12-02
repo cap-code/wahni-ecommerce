@@ -52,20 +52,8 @@
     </div>
   </div>
   {% include "templates/includes/footer.html" %}
-  <div class="fixedbuttons">
-    <div class="support-img-con">
-      <a href="./acesspoint.html">
-        <img src="./assets/bldc/image/locator.png" alt="button for acess points" />
-      </a>
-    </div>
-    <div class="support-img-con">
-      <a href="#">
-        <img src="./assets/bldc/image/headphones.png" alt="button for customer support"/>
-      </a>
-    </div>
-  </div>
+  {% include "templates/includes/floatingbutton.html" %}
   <script src="./assets/bldc/js/acess.js"></script>
-  <script src="./assets/bldc/js/floating.js"></script>
   <script>
     		const mymap = L.map('mapid').setView([10.8505, 76.2711], 7);
         const tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {

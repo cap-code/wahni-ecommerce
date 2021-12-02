@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "templates/includes/header.html" %}
+    <link href="assets/bldc/css/search.css" rel="stylesheet" />
+</head>
+<body>
+    {% include "templates/includes/navbar.html" %} 
+    <div class="mt-7 pt-5 pb-5 container">
+        <h3>results for "{{query}}"</h3>
+    </div>
+    {% if groups %}
+    <div class="container pt-5">
+        <h3>categories</h3>
+        <div class="categories-sea">
+            {% for grp in groups %}
+            <a href="http://103.86.176.198/{{grp.route}}" class="categories">
+                <div class="single-categories-name">
+                    {{grp.item_group_name}}
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+    {% else %}
+    {% endif %}
+    <div class="pt-5 container">
+        <div class="container dealscolor pb-5">
+            {% if items %}
+            <div class="daily-deals-container horizontal-gap">
+              {% for item in items %}
+              <a href="http://103.86.176.198/{{item.route}}" class="basis">
+              <div class="daily-deals-card mx-auto">
+                <img src="{{item.image}}" alt="card"/>
+                <div class="daily-deals-content">
+                  <div>
+                    <h5>{{item.web_item_name}}</h5>    
+                    <h3>{{item.price}}</h3>       
+                  </div>
+                  <div>
+                    <div class="addtocart-con">
+                      <button class="addtocart" data-id="code1">
+                          <img class="addtocart-img" src="./assets/bldc/image/addtocart.png" alt="add to cart" />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </a>
+              {% endfor %}
+            </div>
+            {% else %}
+            <div>
+                <h3>no items match your search! try different word</h3>
+            </div>
+            {% endif %}
+          </div>
+    </div> 
+    {% include "templates/includes/floatingbutton.html" %}
+    {% include "templates/includes/footer.html" %}
+</body>
+</html>

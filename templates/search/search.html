@@ -1,4 +1,7 @@
-const navsearch = document.querySelector(".nav-search");
+<script>
+    var items = {{data}}
+    var Price = {{price}}
+    const navsearch = document.querySelector(".nav-search");
 const msearch = document.querySelector(".m");
 console.log(
   window.getComputedStyle(document.querySelector(".search-input"), null).display
@@ -126,5 +129,4 @@ document.querySelector(".msearch-btn").addEventListener("click", (e) => {
   const r = input.getAttribute("data-route");
   window.location = "http://103.86.176.198/" + items[r].route;
 });
-
-
+</script>

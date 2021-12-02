@@ -1,0 +1,101 @@
+
+<nav class="navbar navbar-light navbar-expand-lg" style="padding:0;margin:5px 0 0 5px">
+	<div class="container">
+		<a class="navbar-brand" href="{{ url_prefix }}{{ home_page or "/" }}">
+			<img src="http://103.86.176.198/assets/bldc/image/logo.png" class="logo" style="width:70px;max-height: none;"/>
+		</a>
+		<div class="right-side-items">
+			{% include "templates/includes/navbar/navbar_items.html" %}
+		  <div class="hamburger">
+			<span class="bar"></span>
+			<span class="bar"></span>
+			<span class="bar"></span>
+		  </div>
+		</div>
+	</div>
+</nav>
+<div class="bottom-nav">
+	<div>
+	  <a class="nav-link active" href="http://103.86.176.198/shop"> Home </a>
+	</div>
+	<div class="dropdown onlydesktop">
+	  <a
+		class="nav-link active dropdown-toggle"
+		href="http://103.86.176.198/all-products"
+		id="dropdownMenuButton" 
+	  >
+		Products
+	  </a>
+	  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+		<a class="dropdown-item" href="#">BLDC</a>
+		<a class="dropdown-item" href="#">Solar PV Package</a>
+		<a class="dropdown-item" href="#">Solar Panel</a>
+		<a class="dropdown-item" href="#">Solar Water Heater</a>
+		<a class="dropdown-item" href="#">Solar Water Heater Tube</a>
+		<a class="dropdown-item" href="#">Solar Batteries</a>
+		<a class="dropdown-item" href="#">Solar Inverters</a>
+	  </div>
+	</div>
+	<div class="dropdown onlydesktop"> 
+	  <a
+		class="nav-link active dropdown-toggle"
+		href="http://103.86.176.198/services.html"
+		id="dropdownMenuButton"  
+	  >
+		Services
+	  </a>
+	  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+		<a class="dropdown-item" href="./ongrid.html">Solar on grid</a>
+		<a class="dropdown-item" href="./offgrid.html">Solar off grid</a>
+		<a class="dropdown-item" href="./optimization.html">Solar Bi directional Hybrid</a>
+	  </div>
+	</div>
+	<div class="onlymobile"> 
+		<a
+		  class="nav-link active"
+		  href="http://103.86.176.198/all-products"
+		>
+		  products
+		</a>
+	  </div>
+	  <div class="onlymobile"> 
+		<a
+		  class="nav-link active"
+		  href="http://103.86.176.198/services.html"
+		>
+		  Services
+		</a>
+	  </div>
+	  <div class="onlymobile"> 
+		<a
+		  class="nav-link active"
+		  href="http://103.86.176.198/wishlist"
+		>
+		  Wishlist
+		</a>
+	  </div>
+	  <div class="onlymobile">
+		<a class="nav-link active" href='http://103.86.176.198/search'>
+			search
+		</a>
+	  </div>
+	<div>
+	  <a
+		class="nav-link active"
+		href="http://103.86.176.198/contact.html"
+	  >
+		Reach Us
+	  </a>
+	</div>
+	<script>
+		const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".bottom-nav");
+hamburger.addEventListener("click", mobileMenu);
+function mobileMenu() {
+  hamburger.classList.toggle("active");
+  navMenu.classList.toggle("active");
+}
+	</script>
+  </div>
+
+

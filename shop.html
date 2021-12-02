@@ -174,27 +174,10 @@
       {% endfor %}
     </div>
   </div>
-  <div class="fixedbuttons">
-    <div class="support-img-con">
-      <a href="./acesspoint.html">
-        <img src="./assets/bldc/image/locator.png" alt="button for acess points" />
-      </a>
-    </div>
-    <div class="support-img-con">
-      <a href="#">
-        <img src="./assets/bldc/image/headphones.png" alt="button for customer support"/>
-      </a>
-    </div>
-  </div>
+  {% include "templates/includes/floatingbutton.html" %}
   {% include "templates/includes/footer.html" %}
 <!-- js should be loaded in body! -->
-  <script>
-    var items = {{data}}
-    var Price = {{price}}
-  </script>
-  <script src="./assets/bldc/js/search.js"></script>
   <script src="./assets/bldc/js/home.js"></script>
-  <script src="./assets/bldc/js/floating.js"></script>
   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
   <!-- <script src="./assets/frappe/js/lib/socket.io.min.js"></script>
   <script type="text/javascript" src="./assets/js/frappe-web.min.js"></script> -->
