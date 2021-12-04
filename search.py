@@ -15,7 +15,7 @@ def get_context(context):
     if frappe.form_dict.q:
         q = str(utils.escape(sanitize_html(frappe.form_dict.q)))
         query = converttoword(q)
-        items = frappe.db.get_all('Website Item',fields=['route','image','web_item_name','new_items','new_deals','item_code','item_group','tags_list'])
+        items = frappe.db.get_all('Website Item',fields=['route','image','web_item_name','item_code','item_group','tags_list'])
         itemGroup = frappe.db.get_all('Item Group',fields=['item_group_name','parent_item_group','show_in_website','route'])
         priceList = frappe.db.get_all('Item Price',fields=['item_code','price_list','selling','price_list_rate'])
         context.query = q
